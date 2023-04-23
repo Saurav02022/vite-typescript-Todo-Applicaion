@@ -1,72 +1,37 @@
-import { updateTodo } from "../api";
+import { Text, Button, Flex, Select } from "@chakra-ui/react";
+import { todoType } from "../constants";
+
 import { ColorMap, Todo } from "../constants";
 type TodoItemProps = {
   todoItem: Todo;
-  OnUpdate: (todo: Todo) => void;
 };
 const TodoItem = (props: TodoItemProps) => {
-  const { todoItem, OnUpdate } = props;
+  const { todoItem } = props;
 
-  const handleLike = async () => {
-    await updateTodo({ ...todoItem, likes: todoItem.likes + 1 }).then((res) =>
-      OnUpdate(res)
-    );
-  };
   return (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        border: "2px solid #ccc",
-        padding: "20px",
-        alignItems: "center",
-        borderRadius: "10px",
-        backgroundColor: ColorMap[todoItem.type],
-      }}
+    <Flex
+      flexDirection="column"
+      border="2px solid #ccc"
+      padding="20px"
+      borderRadius="md"
+      gap="5px"
+      align="center"
+      backgroundColor={ColorMap[todoItem.type]}
     >
-      <h3>Message:- {todoItem.message}</h3>
-      <h3>Likes:-{todoItem.likes}</h3>
-      <div
-        style={{
-          display: "flex",
-          gap: "1rem",
-        }}
-      >
-        <button
-          style={{
-            width: "50%",
-            padding: "5px",
-            textAlign: "center",
-            margin: "auto",
-            borderRadius: "5px",
-            backgroundColor: "teal",
-            color: "white",
-            fontSize: "18px",
-            fontFamily: "sans-serif",
-            fontWeight: "bold",
-          }}
-          onClick={handleLike}
-        >
-          Like
-        </button>
-        <button
-          style={{
-            width: "50%",
-            padding: "5px",
-            textAlign: "center",
-            margin: "auto",
-            borderRadius: "5px",
-            backgroundColor: "teal",
-            color: "white",
-            fontSize: "18px",
-            fontFamily: "sans-serif",
-            fontWeight: "bold",
-          }}
-        >
+      <Text>Message:- {todoItem.message}</Text>
+      <Flex gap="2">
+        <Select mb="1.5" focusBorderColor="white">
+          {Object.values(todoType).map((todoType) => (
+            <option key={todoType} value={todoType}>
+              {todoType}
+            </option>
+          ))}
+        </Select>
+        <Button variant="solid" colorScheme="teal">
           Delete
-        </button>
-      </div>
-    </div>
+        </Button>
+      </Flex>
+    </Flex>
   );
 };
 

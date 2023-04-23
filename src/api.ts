@@ -18,7 +18,6 @@ export const addTodo = async (
     {
       message,
       type,
-      likes: 0,
     }
   );
   return await response.data;

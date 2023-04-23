@@ -4,6 +4,8 @@ import TodoItem from "./TodoItem";
 import { getData } from "../api";
 import { Todo } from "../constants";
 
+import { Flex, Heading, Grid } from "@chakra-ui/react";
+
 const TodoApp = () => {
   const [data, setData] = useState<Todo[]>([]);
   useEffect(() => {
@@ -13,47 +15,25 @@ const TodoApp = () => {
   const OnAdd = (todo: Todo) => {
     setData([...data, todo]);
   };
-  const OnUpdate = (todo: Todo) => {
-    const updateTodo = data.map((item) => {
-      if (item.id === todo.id) {
-        return todo;
-      }
-      return item;
-    });
-    setData(updateTodo);
-  };
+
   return (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        gap: "1rem",
-        alignItems: "center",
-      }}
-    >
-      <h1
-        style={{
-          fontFamily: "sans-serif",
-        }}
-      >
-        TODO Application
-      </h1>
+    <Flex flexDirection="column" gap="1rem" align="center">
+      <Heading as="h1">TODO Application</Heading>
       <TodoInput onAdd={OnAdd} />
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(5,1fr)",
-          width: "95%",
-          margin: "auto",
-          gap: "1rem",
+      <Grid
+        templateColumns={{
+          base: "repeat(1, 1fr)",
+          sm: "repeat(2, 1fr)",
+          md: "repeat(3, 1fr)",
+          lg: "repeat(4, 1fr)",
+          xl: "repeat(5, 1fr)",
         }}
+        gap="10px"
       >
         {data.length > 0 &&
-          data.map((item: Todo) => (
-            <TodoItem key={item.id} todoItem={item} OnUpdate={OnUpdate} />
-          ))}
-      </div>
-    </div>
+          data.map((item: Todo) => <TodoItem key={item.id} todoItem={item} />)}
+      </Grid>
+    </Flex>
   );
 };
 

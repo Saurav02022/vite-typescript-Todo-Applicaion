@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Todo, todoType } from "../constants";
 import { addTodo } from "../api";
+import { Input, Box, Button, Select } from "@chakra-ui/react";
 
 type todoInputProps = {
   onAdd: (todo: Todo) => void;
@@ -30,58 +31,27 @@ const TodoInput = (props: todoInputProps) => {
   };
 
   return (
-    <>
-      <form
-        onSubmit={handleSubmit}
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          gap: "1rem",
-          border: "1px solid #ccc",
-          padding: "40px",
-          borderRadius: "10px",
-        }}
-      >
-        <input
+    <Box border="1px solid #ccc" padding="10" borderRadius="md">
+      <form onSubmit={handleSubmit}>
+        <Input
           type="text"
           value={value}
           onChange={handleChangeValue}
           placeholder="Please Enter Your Todo"
-          style={{
-            padding: "10px",
-            textAlign: "center",
-            fontSize: "18px",
-            fontFamily: "sans-serif",
-            fontWeight: "bold",
-            borderRadius: "5px",
-          }}
+          mb="1.5"
         />
-        <select onChange={handleSelectValue} value={selectValue}>
+        <Select onChange={handleSelectValue} value={selectValue} mb="1.5">
           {Object.values(todoType).map((todoType) => (
             <option key={todoType} value={todoType}>
               {todoType}
             </option>
           ))}
-        </select>
-        <button
-          type="submit"
-          style={{
-            width: "50%",
-            padding: "5px",
-            textAlign: "center",
-            margin: "auto",
-            borderRadius: "5px",
-            backgroundColor: "teal",
-            color: "white",
-            fontSize: "18px",
-            fontFamily: "sans-serif",
-            fontWeight: "bold",
-          }}
-        >
+        </Select>
+        <Button type="submit" variant="solid" colorScheme="teal">
           Submit
-        </button>
+        </Button>
       </form>
-    </>
+    </Box>
   );
 };
 

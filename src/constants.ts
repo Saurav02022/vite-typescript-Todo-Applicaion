@@ -8,12 +8,11 @@ export type Todo = {
   id: number;
   type: todoType;
   message: string;
-  likes: number;
 };
 
 export const ColorMap: Record<todoType, string> = {
-  Learned: "lightgreen",
-  Learning: "teal",
-  Pending: "orange",
-  Revision: "lightblue",
+  Learned: "#87A16D",
+  Learning: "#72CEA0",
+  Pending: "#FFCB96",
+  Revision: "#C4626B",
 };

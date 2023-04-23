@@ -3,85 +3,66 @@
     {
       "id": 1,
       "type": "Learned",
-      "message": "useState",
-      "likes": 1
+      "message": "useState"
     },
     {
       "id": 2,
       "type": "Learned",
-      "message": "useEffect",
-      "likes": 2
+      "message": "useEffect"
     },
     {
       "id": 3,
       "type": "Learning",
-      "message": "useRef",
-      "likes": 3
+      "message": "useRef"
     },
     {
       "id": 4,
       "type": "Pending",
-      "message": "useReducer",
-      "likes": 4
+      "message": "useReducer"
     },
     {
       "id": 5,
       "type": "Revision",
-      "message": "React-101",
-      "likes": 5
-    },
-    {
-      "id": 6,
-      "likes": 6,
-      "message": "redux",
-      "type": "Pending"
+      "message": "React-101"
     },
     {
       "id": 7,
-      "likes": 20,
       "message": "Typescript",
       "type": "Learning"
     },
     {
       "message": "Next.js",
       "type": "Learned",
-      "likes": 8,
       "id": 8
     },
     {
       "message": "Express",
       "type": "Learned",
-      "likes": 9,
       "id": 9
     },
     {
       "message": "MongoDb",
       "type": "Learned",
-      "likes": 10,
       "id": 10
     },
     {
       "message": "Html",
       "type": "Learned",
-      "likes": 0,
       "id": 11
     },
     {
       "message": "React",
       "type": "Revision",
-      "likes": 0,
       "id": 12
     },
     {
       "message": "Khana Khana Hai",
       "type": "Pending",
-      "likes": 40,
       "id": 13
     },
     {
       "message": "sleep",
       "type": "Pending",
-      "likes": 0,
       "id": 14
     }
   ]
