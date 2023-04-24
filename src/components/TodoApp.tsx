@@ -16,6 +16,25 @@ const TodoApp = () => {
     setData([...data, todo]);
   };
 
+  const OnUpdate = (todo: Todo) => {
+    const updateTodo = data.map((item) => {
+      if (item.id === todo.id) {
+        return todo;
+      }
+      return item;
+    });
+    setData(updateTodo);
+  };
+
+  const OnDelete = (todo: Todo) => {
+    const updateTodo = data.filter((item) => {
+      if (item.id !== todo.id) {
+        return item;
+      }
+    });
+    setData(updateTodo);
+  };
+
   return (
     <Flex flexDirection="column" gap="1rem" align="center">
       <Heading as="h1">TODO Application</Heading>
@@ -31,7 +50,14 @@ const TodoApp = () => {
         gap="10px"
       >
         {data.length > 0 &&
-          data.map((item: Todo) => <TodoItem key={item.id} todoItem={item} />)}
+          data.map((item: Todo) => (
+            <TodoItem
+              key={item.id}
+              todoItem={item}
+              OnUpdate={OnUpdate}
+              OnDelete={OnDelete}
+            />
+          ))}
       </Grid>
     </Flex>
   );

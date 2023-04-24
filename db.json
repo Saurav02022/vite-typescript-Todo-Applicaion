@@ -1,69 +1,14 @@
 {
   "todos": [
     {
-      "id": 1,
+      "message": "React",
       "type": "Learned",
-      "message": "useState"
-    },
-    {
-      "id": 2,
-      "type": "Learned",
-      "message": "useEffect"
-    },
-    {
-      "id": 3,
-      "type": "Learning",
-      "message": "useRef"
-    },
-    {
-      "id": 4,
-      "type": "Pending",
-      "message": "useReducer"
-    },
-    {
-      "id": 5,
-      "type": "Revision",
-      "message": "React-101"
-    },
-    {
-      "id": 7,
-      "message": "Typescript",
-      "type": "Learning"
-    },
-    {
-      "message": "Next.js",
-      "type": "Learned",
-      "id": 8
+      "id": 1
     },
     {
       "message": "Express",
-      "type": "Learned",
-      "id": 9
-    },
-    {
-      "message": "MongoDb",
-      "type": "Learned",
-      "id": 10
-    },
-    {
-      "message": "Html",
-      "type": "Learned",
-      "id": 11
-    },
-    {
-      "message": "React",
       "type": "Revision",
-      "id": 12
-    },
-    {
-      "message": "Khana Khana Hai",
-      "type": "Pending",
-      "id": 13
-    },
-    {
-      "message": "sleep",
-      "type": "Pending",
-      "id": 14
+      "id": 2
     }
   ]
 }

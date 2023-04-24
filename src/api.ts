@@ -33,3 +33,6 @@ export const updateTodo = async (changedTodo: Todo): Promise<Todo> => {
 
   return await response.data;
 };
+export const deleteTodo = async (id: number): Promise<void> => {
+  return (await axios.delete(`http://localhost:8080/todos/${id}`)).data;
+};
